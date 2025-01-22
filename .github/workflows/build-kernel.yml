@@ -170,8 +170,6 @@ jobs:
         KSU_VERSION=$(cd KernelSU-Next && expr $(/usr/bin/git rev-list --count HEAD) + 10200)
         cd KernelSU-Next/
         git apply $GITHUB_WORKSPACE/patches/SuSFS.patch
-        cd $GITHUB_WORKSPACE
-        patch -p1 < 50_add_susfs_in_kernel.patch
         
         echo "KSUVER=$KSU_VERSION" >> $GITHUB_ENV
 
